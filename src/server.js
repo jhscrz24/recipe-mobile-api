@@ -72,13 +72,13 @@ app.delete("/api/favorites/:userId/:recipeId", async (req, res) => {
         )
       );
 
-    res.status(201).json({ message: "Favorite removed successfully" });
+    res.status(200).json({ message: "Favorite removed successfully" });
   } catch (error) {
     console.log("Error removing a favorite", error);
     res.status(500).json({ error: "Something went wrong" });
   }
 });
 
-app.listen(5001, () => {
+app.listen(PORT, () => {
   console.log("Server is running on PORT:", PORT);
 });
